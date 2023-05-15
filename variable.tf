@@ -15,6 +15,7 @@ variable "tenant_id" {
 }
 
 ## Management Group
+/*
 variable "mgmt_group_parent" {
   type = string
   default = "Tenant Root Group"
@@ -79,12 +80,31 @@ variable "management_group_above_2_subscriptions" {
   description = "List of subscriptions housed in the mangement group two layer above"
   default = null
 }
+*/
+  
+variable "mgmt_group" {
+  type = map(any)
+
+ }
+
+/*
+example:
+"Contoso" = {
+  "Platform" = [ "Identity", "Management", "Connectifity" ],
+  "Landingzobes" = [],
+  "Decomissioned" = [],
+  "Sandbox" = []
+  }
+
+
+*/
 
 variable "management_group_above_2_parent" {
   type = bool
   description = "Parent management group of the management group two layer above"
   default = false
 }
+
 
 variable "dbg_simulate" {
   type        = bool
